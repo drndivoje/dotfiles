@@ -1,6 +1,11 @@
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
+vim.keymap.set('v', "J", ":m '>+1<CR>gv=gv", { desc = 'Move selected lines down' })
+vim.keymap.set('v', "K", ":m '<-2<CR>gv=gv", { desc = 'Move selected lines up' })
+
+vim.keymap.set('v', "<", "<gv", { desc = 'Shift selected lines left' })
+vim.keymap.set('v', ">", ">gv", { desc = 'Shift selected lines' })
 -- Set to true if you have a Nerd Font installed and selected in the terminal
 vim.g.have_nerd_font = false
 
@@ -43,3 +48,9 @@ vim.keymap.set('n', '<C-h>', '<C-w><C-h>', { desc = 'Move focus to the left wind
 vim.keymap.set('n', '<C-l>', '<C-w><C-l>', { desc = 'Move focus to the right window' })
 vim.keymap.set('n', '<C-j>', '<C-w><C-j>', { desc = 'Move focus to the lower window' })
 vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
+
+-- Duplicate line in normal mode
+vim.keymap.set('n', '<leader>d', 'yyp', { desc = 'Duplicate line' })
+
+-- Duplicate selected lines in visual mode
+vim.keymap.set('v', '<leader>d', 'y`>p', { desc = 'Duplicate selected lines' })

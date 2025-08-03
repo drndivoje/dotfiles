@@ -1,14 +1,32 @@
 vim.opt.number = true
 -- You can also add relative line numbers, to help with jumping.
 --  Experiment for yourself to see if you like it!
--- vim.opt.relativenumber = true
+vim.opt.relativenumber = true
+vim.opt.autoindent = true -- Auto-indent new lines
+vim.opt.smartindent = true -- Smart auto-indenting on new lines 
+
+vim.opt.tabstop = 4 -- Number of spaces that a <Tab> counts for
+
+vim.opt.swapfile = false -- No swap files
+vim.opt.backup = false -- No backup files
+vim.opt.undofile = true -- Enable undo files
 
 -- Enable mouse mode, can be useful for resizing splits for example!
 vim.opt.mouse = 'a'
 
+vim.opt.backspace = {
+  'indent', -- Allow backspace over indent
+  'eol',    -- Allow backspace over end of line
+  'start',  -- Allow backspace over start of insert
+} -- Allow backspace to work like normal
+
+
 -- Don't show the mode, since it's already in the status line
 vim.opt.showmode = false
 
+vim.opt.termguicolors = true -- Enable 24-bit RGB colors in the TUI
+vim.opt.background = 'dark' -- Set background to dark, can also be 'light'
+vim.opt.guicursor = ""
 -- Sync clipboard between OS and Neovim.
 --  Schedule the setting after `UiEnter` because it can increase startup-time.
 --  Remove this option if you want your OS clipboard to remain independent.
@@ -30,8 +48,9 @@ vim.opt.smartcase = true
 -- Keep signcolumn on by default
 vim.opt.signcolumn = 'yes'
 
+
 -- Decrease update time
-vim.opt.updatetime = 250
+vim.opt.updatetime = 50
 
 -- Decrease mapped sequence wait time
 -- Displays which-key popup sooner
