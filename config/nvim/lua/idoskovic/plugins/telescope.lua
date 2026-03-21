@@ -121,6 +121,21 @@ return {
             function() require("telescope.builtin").resume() end,
             desc = "Reopen previous telescope picker",
         },
+        {
+            "<Leader>fg",
+            "<cmd>Telescope git_files<CR>",
+            desc = "Find git files",
+        },
+        {
+            "<Leader>fs",
+            "<cmd>Telescope lsp_document_symbols<CR>",
+            desc = "Document symbols",
+        },
+        {
+            "<Leader>fw",
+            "<cmd>Telescope lsp_dynamic_workspace_symbols<CR>",
+            desc = "Workspace symbols",
+        },
     },
     cmd = {
         "Telescope",
