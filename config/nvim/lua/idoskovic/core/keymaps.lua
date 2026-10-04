@@ -54,3 +54,13 @@ vim.keymap.set('n', '<leader>d', 'yyp', { desc = 'Duplicate line' })
 
 -- Duplicate selected lines in visual mode
 vim.keymap.set('v', '<leader>d', 'y`>p', { desc = 'Duplicate selected lines' })
+
+-- Splits
+vim.keymap.set('n', '<leader>sv', '<cmd>vsplit<CR>', { desc = '[S]plit window [v]ertically' })
+vim.keymap.set('n', '<leader>sh', '<cmd>split<CR>', { desc = '[S]plit window [h]orizontally' })
+
+-- Tabs
+vim.keymap.set('n', '<leader>tn', '<cmd>tabnew<CR>', { desc = '[T]ab [n]ew' })
+vim.keymap.set('n', '<leader>tc', '<cmd>tabclose<CR>', { desc = '[T]ab [c]lose' })
+vim.keymap.set('n', '<leader>tl', '<cmd>tabnext<CR>', { desc = '[T]ab next' })
+vim.keymap.set('n', '<leader>th', '<cmd>tabprevious<CR>', { desc = '[T]ab previous' })

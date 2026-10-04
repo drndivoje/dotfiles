@@ -21,6 +21,24 @@ Leader key: `Space`
 | `<C-j>` | Normal | Focus lower window |
 | `<C-k>` | Normal | Focus upper window |
 
+### Splits
+
+| Key | Mode | Action |
+|-----|------|--------|
+| `<leader>sv` | Normal | Split window vertically |
+| `<leader>sh` | Normal | Split window horizontally |
+
+### Tabs
+
+| Key | Mode | Action |
+|-----|------|--------|
+| `<leader>tn` | Normal | New tab |
+| `<leader>tc` | Normal | Close tab |
+| `<leader>tl` | Normal | Next tab |
+| `<leader>th` | Normal | Previous tab |
+
+> Built-in `gt` / `gT` / `{N}gt` also switch tabs.
+
 ### Editing
 
 | Key | Mode | Action |
