@@ -14,7 +14,6 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup(
     {
         { import = "idoskovic.plugins" },
-        { import = "idoskovic.plugins.lsp" },
     },
     {
         checker = {

@@ -7,7 +7,7 @@ vim.keymap.set('v', "K", ":m '<-2<CR>gv=gv", { desc = 'Move selected lines up' }
 vim.keymap.set('v', "<", "<gv", { desc = 'Shift selected lines left' })
 vim.keymap.set('v', ">", ">gv", { desc = 'Shift selected lines' })
 -- Set to true if you have a Nerd Font installed and selected in the terminal
-vim.g.have_nerd_font = false
+vim.g.have_nerd_font = true
 
 -- [[ Setting options ]]
 -- See `:help vim.opt`

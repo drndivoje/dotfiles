@@ -26,20 +26,25 @@ install_git_prompt() {
     fi
 }
 
-install_kitty() {
-    if ! command -v kitty &> /dev/null; then
-        echo "Kitty is not installed. Skipping Kitty configuration."
+# Nerd Font symbols only; the terminal falls back to it for icon glyphs
+install_nerd_font_symbols() {
+    local font_dir="$HOME/.local/share/fonts/NerdFontsSymbolsOnly"
+    if fc-list | grep -q "Symbols Nerd Font"; then
+        echo "Nerd Font symbols are already installed."
         return
     fi
-    rm -rf "$HOME/.config/kitty"
-    mkdir -p "$HOME/.config/kitty"
-    cp -r config/kitty/* $HOME/.config/kitty
-    echo "Kitty configuration has been installed."
+    mkdir -p "$font_dir"
+    curl -fsSL -o /tmp/NerdFontsSymbolsOnly.zip \
+        https://github.com/ryanoasis/nerd-fonts/releases/latest/download/NerdFontsSymbolsOnly.zip
+    unzip -oq /tmp/NerdFontsSymbolsOnly.zip -d "$font_dir"
+    rm /tmp/NerdFontsSymbolsOnly.zip
+    fc-cache -f "$font_dir"
+    echo "Nerd Font symbols have been installed."
 }
 
 rm -rf "$HOME/.config/nvim"
 mkdir -p "$HOME/.config/nvim"
 cp -r config/nvim/* $HOME/.config/nvim
 install_git_prompt
-install_kitty
+install_nerd_font_symbols
 echo "Dotfiles has been installed to $HOME"

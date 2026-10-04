@@ -25,7 +25,7 @@ vim.opt.backspace = {
 vim.opt.showmode = false
 
 vim.opt.termguicolors = true -- Enable 24-bit RGB colors in the TUI
-vim.opt.background = 'dark' -- Set background to dark, can also be 'light'
+vim.opt.background = 'light'
 vim.opt.guicursor = ""
 -- Sync clipboard between OS and Neovim.
 --  Schedule the setting after `UiEnter` because it can increase startup-time.
