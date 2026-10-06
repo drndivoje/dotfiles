@@ -169,7 +169,16 @@ return {
         -- A list of functions, each representing a global custom command
         -- that will be available in all sources (if not overridden in `opts[source_name].commands`)
         -- see `:h neo-tree-custom-commands-global`
-        commands = {},
+        commands = {
+          -- Open the node like "open", but keep the cursor in the tree for files
+          open_keep_focus = function(state)
+            local node = state.tree:get_node()
+            state.commands["open"](state)
+            if node and node.type ~= "directory" and vim.api.nvim_win_is_valid(state.winid) then
+              vim.api.nvim_set_current_win(state.winid)
+            end
+          end,
+        },
         window = {
           position = "left",
           width = 40,
@@ -182,8 +191,9 @@ return {
               "toggle_node",
               nowait = false, -- disable `nowait` if you have existing combos starting with this char that you want to use
             },
-            ["<2-LeftMouse>"] = "open",
-            ["<cr>"] = "open",
+            ["<2-LeftMouse>"] = "open_keep_focus",
+            ["<cr>"] = "open_keep_focus",
+            ["O"] = "open", -- open and jump to the file window
             ["<esc>"] = "cancel", -- close preview or floating neo-tree window
             ["P"] = {
               "toggle_preview",
@@ -220,6 +230,11 @@ return {
             ["A"] = "add_directory", -- also accepts the optional config.show_path option like "add". this also supports BASH style brace expansion.
             ["d"] = "delete",
             ["r"] = "rename",
+            -- IDE-style aliases
+            ["n"] = { "add", config = { show_path = "none" } },
+            ["N"] = "add_directory",
+            ["<F2>"] = "rename",
+            ["<del>"] = "delete",
             ["b"] = "rename_basename",
             ["y"] = "copy_to_clipboard",
             ["x"] = "cut_to_clipboard",

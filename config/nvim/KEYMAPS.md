@@ -11,6 +11,7 @@ Leader key: `Space`
 | `<Esc>` | Normal | Clear search highlight |
 | `<leader>q` | Normal | Open diagnostic quickfix list |
 | `<Esc><Esc>` | Terminal | Exit terminal mode |
+| `<leader>wa` | Normal | Save all modified files |
 
 ### Window Navigation
 
@@ -88,7 +89,8 @@ Leader key: `Space`
 | Key | Action |
 |-----|--------|
 | `<Space>` | Toggle node |
-| `<CR>` / double-click | Open |
+| `<CR>` / double-click | Open file, cursor stays in the tree |
+| `O` | Open file and jump to it |
 | `<Esc>` | Cancel / close float |
 | `P` | Toggle preview (float) |
 | `l` | Focus preview |
@@ -98,10 +100,10 @@ Leader key: `Space`
 | `w` | Open with window picker |
 | `C` | Close node |
 | `z` | Close all nodes |
-| `a` | Add file |
-| `A` | Add directory |
-| `d` | Delete |
-| `r` | Rename |
+| `a` / `n` | New file (end name with `/` for a directory) |
+| `A` / `N` | New directory |
+| `d` / `<Del>` | Delete (asks for confirmation) |
+| `r` / `<F2>` | Rename |
 | `b` | Rename basename |
 | `y` | Copy to clipboard |
 | `x` | Cut to clipboard |

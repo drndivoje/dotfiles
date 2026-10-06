@@ -64,3 +64,6 @@ vim.keymap.set('n', '<leader>tn', '<cmd>tabnew<CR>', { desc = '[T]ab [n]ew' })
 vim.keymap.set('n', '<leader>tc', '<cmd>tabclose<CR>', { desc = '[T]ab [c]lose' })
 vim.keymap.set('n', '<leader>tl', '<cmd>tabnext<CR>', { desc = '[T]ab next' })
 vim.keymap.set('n', '<leader>th', '<cmd>tabprevious<CR>', { desc = '[T]ab previous' })
+
+-- Save all modified buffers
+vim.keymap.set('n', '<leader>wa', '<cmd>wall<CR>', { desc = '[W]rite [a]ll modified files' })
